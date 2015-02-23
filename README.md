@@ -1,10 +1,10 @@
-# Safe C Lib - strnlen_s
+# libsafec - strnlen_s
 
 ## Synopsis
 
 ```c
-#include "safe_str_lib.h"
-size_t strnlen_s(const char *s, size_t maxsize)
+#include "strnlen_s.h"
+size_t strnlen_s(const char *s, size_t maxsize);
 ```
 
 ### Description
@@ -33,4 +33,4 @@ interfaces, Extensions to the C Library, Part I: Bounds-checking interfaces.
 
 If `s` is a null pointer, then the `strnlen_s` function returns zero.
 
-Otherwise, the `strnlen_s` function returns the number of characters that precede the terminating null character. If there is no null character in the first `maxsize` characters of `s` then `strnlen_s` returns `maxsize`. At most the first `maxsize` characters of `s` shall be accessed by strnlen_s.
+Otherwise, the `strnlen_s` function returns the number of characters that precede the terminating null character. If there is no null character in the first `maxsize` characters of `s` then `strnlen_s` returns `maxsize`. At most the first `maxsize` characters of `s` shall be accessed by `strnlen_s`.
