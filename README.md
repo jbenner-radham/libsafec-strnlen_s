@@ -4,35 +4,33 @@
 
 ```c
 #include "safe_str_lib.h"
-rsize_t strnlen_s(const char *dest, rsize_t dmax)
+size_t strnlen_s(const char *s, size_t maxsize)
 ```
 
-### DESCRIPTION
+### Description
 
-The `strnlen_s` function computes the length of the string pointed to by dest.
+The `strnlen_s` function computes the length of the string pointed to by `s`.
 
-### SPECIFIED IN
+### Specified In
 
-ISO/IEC TR 24731-1, Programming languages, environments and system software
-interfaces, Extensions to the C Library, Part I: Bounds-checking interfaces
+ISO/IEC TR 24731-1 § 6.7.4.3, Programming languages, environments and system software
+interfaces, Extensions to the C Library, Part I: Bounds-checking interfaces.
 
-### INPUT PARAMETERS
+### Input Parameters
 
-- `dest` pointer to string
-- `dmax` restricted maximum length.
+- `s` pointer to string
+- `maxsize` restricted maximum length.
 
-### OUTPUT PARAMETERS
+### Output Parameters
 
     none
 
-### RUNTIME CONSTRAINTS
+### Runtime Constraints
 
-- `dest` shall not be a null pointer
-- `dmax` shall not be greater than `RSIZE_MAX_STR`
-- `dmax` shall not equal zero
+    none
 
-### RETURN VALUE
+### Returns
 
-The function returns the string length, excluding the terminating null character. If dest is `NULL`, then `strnlen_s` returns `0`.
+If `s` is a null pointer, then the `strnlen_s` function returns zero.
 
-Otherwise, the `strnlen_s` function returns the number of characters that precede the terminating null character. If there is no null character in the first `dmax` characters of `dest` then `strnlen_s` returns `dmax`. At most the first `dmax` characters of `dest` are accessed by `strnlen_s`.
+Otherwise, the `strnlen_s` function returns the number of characters that precede the terminating null character. If there is no null character in the first `maxsize` characters of `s` then `strnlen_s` returns `maxsize`. At most the first `maxsize` characters of `s` shall be accessed by strnlen_s.
