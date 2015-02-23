@@ -5,23 +5,23 @@
  * Modified 2015, James Benner <james.benner@gmail.com>
  *------------------------------------------------------------------*/
 
-rsize_t strnlen_s(const char *dest, rsize_t dmax)
+size_t strnlen_s(const char *str, size_t maxsize)
 {
-    if (dest == NULL) {
+    if (str == NULL) {
         return RCNEGATE(0);
     }
 
-    if (dmax == 0) {
-        invoke_safe_str_constraint_handler("strnlen_s: dmax is 0", NULL, ESZEROL);
+    if (maxsize == 0) {
+        invoke_safe_str_constraint_handler("strnlen_s: maxsize is 0", NULL, ESZEROL);
         return RCNEGATE(0);
     }
 
-    if (dmax > RSIZE_MAX_STR) {
-        invoke_safe_str_constraint_handler("strnlen_s: dmax exceeds max", NULL, ESLEMAX);
+    if (maxsize > RSIZE_MAX_STR) {
+        invoke_safe_str_constraint_handler("strnlen_s: maxsize exceeds max", NULL, ESLEMAX);
         return RCNEGATE(0);
     }
 
-    rsize_t count = 0;
+    size_t count = 0;
 
     while (*dest++ && dmax--) {
         count++;
