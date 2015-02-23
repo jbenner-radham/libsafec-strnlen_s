@@ -1,5 +1,5 @@
 /*------------------------------------------------------------------
- * strnlen_s.c
+ * strnlen_s.h
  *
  * October 2008, Bo Berry
  * Modified 2015, James Benner <james.benner@gmail.com>
