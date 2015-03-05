@@ -1,9 +1,10 @@
 # libsafec - strnlen_s
 
-## Synopsis
+### Synopsis
 
 ```c
 #include "strnlen_s.h"
+
 size_t strnlen_s(const char *s, size_t maxsize);
 ```
 
@@ -13,7 +14,7 @@ The `strnlen_s` function computes the length of the string pointed to by `s`.
 
 ### Specified In
 
-ISO/IEC TR 24731-1 § 6.7.4.3, Programming languages, environments and system software
+ISO/IEC TR 24731-1 §6.7.4.3, Programming languages, environments and system software
 interfaces, Extensions to the C Library, Part I: Bounds-checking interfaces.
 
 ### Input Parameters
